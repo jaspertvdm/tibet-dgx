@@ -1,0 +1,21 @@
+[package]
+name = "tibet-dgx"
+version = "0.1.0"
+edition = "2021"
+description = "Zero-Trust DGX — Run LLMs across machines without NVLink. Encrypted RAID-0 + DIME aperture maps AI models across servers."
+license = "MIT"
+authors = ["Jasper van de Meent <jasper@humotica.com>", "Root AI <root_idd@humotica.nl>"]
+keywords = ["llm", "cross-machine", "ai-inference", "dgx", "gpu-free"]
+categories = ["command-line-utilities", "science"]
+repository = "https://github.com/Humotica/tibet-dgx"
+homepage = "https://ainternet.org"
+readme = "README.md"
+
+[[bin]]
+name = "tibet-dgx"
+path = "src/main.rs"
+
+[dependencies]
+tibet-trust-kernel = { git = "https://github.com/Humotica/tibet-trust-kernel", branch = "main", features = ["full"] }
+tokio = { version = "1.0", features = ["full"] }
+clap = { version = "4", features = ["derive"] }

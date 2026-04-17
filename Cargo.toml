@@ -16,6 +16,6 @@ name = "tibet-dgx"
 path = "src/main.rs"
 
 [dependencies]
-tibet-trust-kernel = { git = "https://github.com/Humotica/tibet-trust-kernel", branch = "main", features = ["full"] }
+tibet-trust-kernel = { version = "1.0.0-alpha.2", features = ["full"] }
 tokio = { version = "1.0", features = ["full"] }
 clap = { version = "4", features = ["derive"] }

@@ -1,8 +1,8 @@
 [package]
 name = "tibet-dgx"
-version = "0.1.0"
+version = "0.2.0"
 edition = "2021"
-description = "Zero-Trust DGX — Run LLMs across machines without NVLink. Encrypted RAID-0 + DIME aperture maps AI models across servers."
+description = "Zero-Trust DGX — Run LLMs across machines without NVLink. QUIC multi-stream + encrypted RAID-0 + DIME aperture."
 license = "MIT"
 authors = ["Jasper van de Meent <jasper@humotica.com>", "Root AI <root_idd@humotica.nl>"]
 keywords = ["llm", "cross-machine", "ai-inference", "dgx", "gpu-free"]
@@ -15,7 +15,11 @@ readme = "README.md"
 name = "tibet-dgx"
 path = "src/main.rs"
 
+[features]
+default = ["quic"]
+quic = ["tibet-trust-kernel/quic"]
+
 [dependencies]
-tibet-trust-kernel = { version = "1.0.0-alpha.2", features = ["full"] }
+tibet-trust-kernel = { version = "1.0.0-alpha.3", features = ["full"] }
 tokio = { version = "1.0", features = ["full"] }
 clap = { version = "4", features = ["derive"] }
